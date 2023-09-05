@@ -3,17 +3,17 @@ using TMPro;
 
 public class HealthDisplay : MonoBehaviour
 {
-    [SerializeField] private Bird _bird;
+    [SerializeField] private BirdHealth _birdHealth;
     [SerializeField] private TMP_Text _healthText; 
 
     private void OnEnable()
     {
-        _bird.HealthChanged += OnHealthChanged;
+        _birdHealth.HealthChanged += OnHealthChanged;
     }
 
     private void OnDisable()
     {
-        _bird.HealthChanged -= OnHealthChanged;
+        _birdHealth.HealthChanged -= OnHealthChanged;
     }
 
     private void OnHealthChanged(int health)

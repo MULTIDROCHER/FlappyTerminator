@@ -14,7 +14,7 @@ public class BirdMover : MonoBehaviour
     private Quaternion _minRotation;
     private Quaternion _maxRotation;
 
-    void Awake()
+    private void Awake()
     {
         transform.position = _startPosition;
 
@@ -23,10 +23,10 @@ public class BirdMover : MonoBehaviour
         _minRotation = Quaternion.Euler(0, 0, _minRotationZ);
         _maxRotation = Quaternion.Euler(0, 0, _maxRotationZ);
 
-        ResetBird();
+        Reset();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -38,7 +38,7 @@ public class BirdMover : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, _minRotation, _rotationSpeed * Time.deltaTime);
     }
 
-    public void ResetBird()
+    public void Reset()
     {
         transform.position = _startPosition;
         transform.rotation = Quaternion.Euler(0, 0, 0);

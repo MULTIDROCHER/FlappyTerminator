@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85dbd4cb3a45b1d408959292f324aa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bird: {fileID: 216371160}
+  _birdHealth: {fileID: 216371166}
   _healthText: {fileID: 1539663395}
 --- !u!114 &106176357
 MonoBehaviour:
@@ -477,10 +477,12 @@ GameObject:
   - component: {fileID: 216371159}
   - component: {fileID: 216371158}
   - component: {fileID: 216371156}
-  - component: {fileID: 216371155}
   - component: {fileID: 216371160}
+  - component: {fileID: 216371155}
   - component: {fileID: 216371163}
   - component: {fileID: 216371164}
+  - component: {fileID: 216371166}
+  - component: {fileID: 216371165}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -607,7 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4004bf25f9fda0647b85c4b3018983aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
 --- !u!114 &216371163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +640,31 @@ CapsuleCollider2D:
   m_Offset: {x: 0.1207391, y: -0.013631821}
   m_Size: {x: 0.5321963, y: 0.6607251}
   m_Direction: 0
+--- !u!114 &216371165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216371154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ccd1cb4e0aa4c4488dee7d57516a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &216371166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216371154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3317fcf10b96f584c98ba889c27c19de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 5
 --- !u!1 &242636440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,9 +1130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d987bdb0d5490e549867a4522d389a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bird: {fileID: 216371160}
+  _birdMover: {fileID: 216371155}
+  _birdHealth: {fileID: 216371166}
+  _birdScore: {fileID: 216371165}
   _spawner: {fileID: 2142433891}
-  _scoreCount: {fileID: 1242550861}
   _startScreen: {fileID: 1547399452}
   _gameOverScreen: {fileID: 447868520}
 --- !u!1 &549224501
@@ -1901,7 +1928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93270c89c956ec143b6065ffcf3c7f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bird: {fileID: 216371160}
+  _bird: {fileID: 216371165}
   _scoreText: {fileID: 1759291314}
 --- !u!114 &1242550862
 MonoBehaviour:

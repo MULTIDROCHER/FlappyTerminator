@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ScoreCount : MonoBehaviour
 {
-    [SerializeField] private Bird _bird;
+    [SerializeField] private BirdScore _bird;
     [SerializeField] private TMP_Text _scoreText; 
 
     private void OnEnable()

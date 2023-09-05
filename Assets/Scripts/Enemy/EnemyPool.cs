@@ -8,25 +8,24 @@ public class EnemyPool : MonoBehaviour
     [SerializeField] private int _capacity;
 
     private List<Enemy> _pool = new List<Enemy>();
-    
+
     public Transform Container => _container;
 
-    public void ResetPool()
+    public void Reset()
     {
         foreach (var enemy in _pool)
         {
-            enemy.ResetEnemy();
+            enemy.Reset(false);
         }
     }
 
     protected void Initialize(Enemy[] prefabs)
     {
-
         for (int i = 0; i < _capacity; i++)
         {
             int randomIndex = Random.Range(0, prefabs.Length);
             Enemy spawned = Instantiate(prefabs[randomIndex], _container);
-            spawned.ResetEnemy();
+            spawned.Reset(false);
             spawned.gameObject.SetActive(false);
 
             _pool.Add(spawned);

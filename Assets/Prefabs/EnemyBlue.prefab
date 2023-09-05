@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1276409412653293683}
   - component: {fileID: 6028368397527126717}
   - component: {fileID: 6085401253006841329}
+  - component: {fileID: 7170829760062951397}
+  - component: {fileID: -7732643016066356093}
   m_Layer: 0
   m_Name: EnemyBlue
   m_TagString: Untagged
@@ -118,11 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4971d91ff73ca448b321b9aa64015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 2
-  _reward: 3
-  _shootRage: 2
-  _shootPoint: {fileID: 6461569353061709861}
-  _patron: {fileID: 300558740346884349, guid: 732d523ac2406504a8f58e09107839d6, type: 3}
 --- !u!114 &1276409412653293683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +166,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7170829760062951397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767944837108475521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9e2317a00a48a4caacc4953f332113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patron: {fileID: 300558740346884349, guid: 732d523ac2406504a8f58e09107839d6, type: 3}
+  _shootPoint: {fileID: 6461569353061709861}
+--- !u!114 &-7732643016066356093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767944837108475521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eed2b7753978da42a2783a00b40bcd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 2
+  _reward: 5
 --- !u!1 &7384241678480804771
 GameObject:
   m_ObjectHideFlags: 0

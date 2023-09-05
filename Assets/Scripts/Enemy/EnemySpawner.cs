@@ -32,7 +32,7 @@ public class EnemySpawner : EnemyPool
 
     private void SetObject(Enemy prefab, Vector3 spawnPoint)
     {
-        prefab.gameObject.SetActive(true);
         prefab.transform.position = spawnPoint;
+        prefab.Reset(true);
     }
 }

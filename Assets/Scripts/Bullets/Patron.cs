@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Patron : MonoBehaviour
@@ -10,7 +11,7 @@ public class Patron : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, _delay);
+        StartCoroutine(DestroyAfterDelay());
     }
 
     private void Update()
@@ -20,7 +21,7 @@ public class Patron : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent(out Bird bird))
+        if (other.TryGetComponent(out BirdHealth bird))
         {
             bird.TakeDamage(_damage);
             Destroy(gameObject);
@@ -30,5 +31,11 @@ public class Patron : MonoBehaviour
     public void SetDirection(Vector3 direction)
     {
         _direction = direction.normalized;
+    }
+
+    private IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(_delay);
+        Destroy(gameObject);
     }
 }
