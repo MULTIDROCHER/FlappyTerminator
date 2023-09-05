@@ -9,8 +9,6 @@ public class EnemyPool : MonoBehaviour
 
     private List<Enemy> _pool = new List<Enemy>();
 
-    public Transform Container => _container;
-
     public void Reset()
     {
         foreach (var enemy in _pool)
