@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : EnemyPool
@@ -6,25 +7,21 @@ public class EnemySpawner : EnemyPool
     [SerializeField] private Transform[] _spawnPoints;
     [SerializeField] private float _spawnRate;
 
-    private float _elapsedTime;
-
     private void Start()
     {
         Initialize(_prefabs);
+        StartCoroutine(SpawnEnemie());
     }
 
-    private void Update()
+    private IEnumerator SpawnEnemie()
     {
-        _elapsedTime += Time.deltaTime;
-
-        if (_elapsedTime >= _spawnRate)
+        while (true)
         {
+            yield return new WaitForSeconds(_spawnRate);
+
             if (TryGetObject(out Enemy enemy))
             {
-                _elapsedTime = 0;
-
                 int randomPointNumber = Random.Range(0, _spawnPoints.Length);
-
                 SetObject(enemy, _spawnPoints[randomPointNumber].position);
             }
         }
