@@ -12,9 +12,7 @@ public class EnemyCollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.GetComponent<EnemyStopLine>() != null)
-        {
+        if (other.TryGetComponent(out EnemyStopLine stopLine))
             _enemy.ChangeAttackStatus(true);
-        }
     }
 }

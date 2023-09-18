@@ -9,24 +9,31 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] private Transform _shootPoint;
 
     private Enemy _enemy;
-    private float _elapsedTime;
-    private float _shootRage = 2f;
+    private WaitForSeconds _waitForSeconds;
+    private float _shootRate = 2f;
 
     private void Start()
     {
         _enemy = GetComponent<Enemy>();
+        _waitForSeconds = new WaitForSeconds(_shootRate);
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        _elapsedTime += Time.deltaTime;
+        StartCoroutine(Shooting());
+    }
 
-        if (_elapsedTime >= _shootRage && _enemy.ReadyToShoot)
-        {
-            _elapsedTime = 0;
+    private void OnDisable()
+    {
+        StopCoroutine(Shooting());
+    }
+
+    private IEnumerator Shooting()
+    {
+        yield return _waitForSeconds;
+
+        if (_enemy.ReadyToShoot)
             Attack();
-            _enemy.ChangeAttackStatus(false);
-        }
     }
 
     private void Attack()
